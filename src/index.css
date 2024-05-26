@@ -1,13 +1,156 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: "Estedad Black";
+        src: local("Estedad Black"),
+            url("../public/fonts/estedad/Estedad-Black.woff2") format("woff2");
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Estedad ExtraBold";
+        src: local("Estedad ExtraBold"),
+            url("../public/fonts/estedad/Estedad-ExtraBold.woff2")
+                format("woff2");
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Estedad ExtraLight";
+        src: local("Estedad ExtraLight"),
+            url("../public/fonts/estedad/Estedad-ExtraLight.woff2")
+                format("woff2");
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Estedad Light";
+        src: local("Estedad Light"),
+            url("../public/fonts/estedad/Estedad-Light.woff2") format("woff2");
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Estedad Medium";
+        src: local("Estedad Medium"),
+            url("../public/fonts/estedad/Estedad-Medium.woff2") format("woff2");
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Estedad Regular";
+        src: local("Estedad Regular"),
+            url("../public/fonts/estedad/Estedad-Regular.woff2") format("woff2");
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Estedad SemiBold";
+        src: local("Estedad SemiBold"),
+            url("../public/fonts/estedad/Estedad-SemiBold.woff2")
+                format("woff2");
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Estedad Thin";
+        src: local("Estedad Thin"),
+            url("../public/fonts/estedad/Estedad-Thin.woff2") format("woff2");
+        font-display: swap;
+    }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        background-color: #fcfcfc;
+    }
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /* @media screen and (min-width: 567px) {
+        .container {
+            max-width: 540px;
+        }
+    }
+    @media screen and (min-width: 768px) {
+        .container {
+            max-width: 720px;
+        }
+    }
+    @media screen and (min-width: 992px) {
+        .container {
+            max-width: 960px;
+        }
+    } */
+
+    @media screen and (min-width: 1200px) {
+        .container {
+            max-width: 1140px;
+        }
+    }
+}
+
+@layer utilities {
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+
+    .header {
+        @apply bg-transparent fixed top-0 left-0 right-0 z-20 pt-6 pb-4 transition-all duration-200;
+    }
+
+    .header-scroll {
+        @apply bg-white shadow-header h-[70px] py-[15px];
+    }
+
+    .callBtn {
+        @apply flex-center bg-[#00a65c] rounded-full cursor-pointer hover:bg-[#44BF8D] transition-all;
+    }
+    .callBtnBeforeScroll {
+        @apply w-[135px] h-[39px];
+    }
+    .callBtnAfterScroll {
+        @apply text-sm w-[120px] h-9;
+    }
+
+    /* Start Class Pricng Box.js in Components/Pricing/Boxes.js */
+
+    .PricingBoxWrapper {
+        @apply flex-center flex-col p-10;
+    }
+
+    .PricingBoxBgWhite {
+        @apply bg-[#f8f8f8] hover:shadow-shadowPrice transition-all;
+    }
+    .PricingBoxBgBlue {
+        @apply bg-[#003379] rounded-xl;
+    }
+
+    .PricingTextColorBlue {
+        @apply text-[#003379];
+    }
+
+    .PricingTextColorWhite {
+        @apply text-white;
+    }
+
+    .PricingUlTextColorWhite {
+        @apply text-white;
+    }
+    .PricingUlTextColorGary {
+        @apply text-[#404040];
+    }
+
+    .PricingBtnBlue {
+        @apply border-2 text-[#558b95]  border-[#558b95] hover:text-[#003379] hover:border-[#003379];
+    }
+    .PricingBtnGreen {
+        @apply bg-[#00a65c]  text-white rounded-full cursor-pointer hover:bg-[#44BF8D];
+    }
+
+    /* End Class Pricng Box.js in Components/Pricing/Boxes.js */
 }
